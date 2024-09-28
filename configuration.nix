@@ -17,22 +17,22 @@ users.users.sabeeh = {
   shell = pkgs.zsh;
   packages = with pkgs; [
   #  thunderbird
-      pkgs.neovim
-      pkgs.brave
-      pkgs.distrobox
-      pkgs.steam
-      pkgs.gcc
-      pkgs.nodejs_22
-      pkgs.prismlauncher
-      pkgs.nerdfonts
-      pkgs.discord
-      pkgs.kitty
-      pkgs.vscode
-      pkgs.fzf
-      pkgs.xclip
-      pkgs.lutris-unwrapped
-      pkgs.virtualbox
-      pkgs.gh
+      neovim
+      brave
+      distrobox
+      steam
+      gcc
+      nodejs_22
+      prismlauncher
+      nerdfonts
+      discord
+      kitty
+      vscode
+      fzf
+      xclip
+      lutris-unwrapped
+      virtualbox
+      gh
 
       #Rust stuff
       pkgs.rustc
