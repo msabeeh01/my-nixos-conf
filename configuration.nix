@@ -32,6 +32,7 @@ users.users.sabeeh = {
       pkgs.xclip
       pkgs.lutris-unwrapped
       pkgs.virtualbox
+      pkgs.gh
 
       #Rust stuff
       pkgs.rustc
