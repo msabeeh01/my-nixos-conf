@@ -6,7 +6,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, home-manager, ... }: 
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
     let
       lib = nixpkgs.lib;
       importAll = paths: # Imports a list of both of nix files and folders, importing all nix files within the folders automatically. Non-recursive.
@@ -39,9 +39,19 @@
     # replace 'joes-desktop' with your hostname here.
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = importAll [ 
+      modules = [ 
         ./configuration.nix
-        ./modules/programs
+        # ./modules/programs
+
+          #home-manager
+        home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.user.sabeeh = import ./home.nix;
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+          }
       ];
     };
   };
