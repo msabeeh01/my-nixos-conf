@@ -27,10 +27,10 @@ users.users.sabeeh = {
       nerdfonts
       discord
       kitty
-      vscode
+      # vscode
       fzf
       xclip
-      lutris-unwrapped
+      # lutris-unwrapped
       virtualbox
       gh
       lazygit
