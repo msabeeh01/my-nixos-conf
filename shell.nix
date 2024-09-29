@@ -1,8 +1,9 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> {
+  config.allowUnfree = true;
+} }:
 
 (pkgs.buildFHSEnv {
   name = "simple-x11-env";
-  allowUnfree=true;
   targetPkgs = pkgs: (with pkgs; [
     udev
     alsa-lib
