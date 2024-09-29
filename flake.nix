@@ -1,8 +1,12 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = { self, nixpkgs,  ... }: 
+  outputs = { self, nixpkgs, home-manager, ... }: 
     let
       lib = nixpkgs.lib;
       importAll = paths: # Imports a list of both of nix files and folders, importing all nix files within the folders automatically. Non-recursive.
