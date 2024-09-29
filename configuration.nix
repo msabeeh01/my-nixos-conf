@@ -20,7 +20,7 @@ users.users.sabeeh = {
       neovim
       brave
       distrobox
-      steam
+      # steam
       gcc
       nodejs_22
       prismlauncher
