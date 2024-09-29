@@ -33,6 +33,10 @@ users.users.sabeeh = {
       lutris-unwrapped
       virtualbox
       gh
+      lazygit
+
+      #gnome extensions
+      gnomeExtensions.gsconnect
 
       #Rust stuff
       pkgs.rustc
@@ -45,8 +49,9 @@ users.users.sabeeh = {
   networking = {
       extraHosts = "
         10.0.0.147 pvehost
-        10.0.0.173 truenas
+        10.0.0.174 truenas
         10.0.0.26  haos
+        10.0.0.183 xhost
       ";
     };
 
@@ -161,6 +166,15 @@ users.users.sabeeh = {
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+    networking.firewall = { 
+    enable = true;
+    allowedTCPPortRanges = [ 
+      { from = 1714; to = 1764; } # KDE Connect
+    ];  
+    allowedUDPPortRanges = [ 
+      { from = 1714; to = 1764; } # KDE Connect
+    ];  
+  };  
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
