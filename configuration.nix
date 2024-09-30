@@ -2,44 +2,67 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+  users.users.sabeeh = {
+    isNormalUser = true;
+    description = "Sabeeh";
+    extraGroups = [
+      "docker"
+      "networkmanager"
+      "wheel"
     ];
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  programs.zsh.enable = true;
-  programs.zsh.autosuggestions.enable = true;
-users.users.sabeeh = {
-  isNormalUser = true;
-  description = "Sabeeh";
-  extraGroups = [ "docker" "networkmanager" "wheel" ];
-  shell = pkgs.zsh;
-  # packages = with pkgs; [
-  #
-  # ];
-};
-  
- 
+    shell = pkgs.zsh;
+    # packages = with pkgs; [
+    # ];
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions = {
+      enable = true;
+    };
+    syntaxHighlighting = {
+      enable = true;
+    };
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell";
+    };
+  };
+
   networking.hostName = "nixos"; # Define your hostname.
   networking = {
-      extraHosts = "
+    extraHosts = "
         10.0.0.147 pvehost
         10.0.0.174 truenas
         10.0.0.26  haos
         10.0.0.183 xhost
       ";
-    };
+  };
 
   fonts = {
-      fontconfig = {
-          defaultFonts = {
-          monospace = [ "ComicShannsMonoNerdFont" ];
-          };
-        };
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "ComicShannsMonoNerdFont" ];
+      };
     };
+  };
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -110,9 +133,9 @@ users.users.sabeeh = {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   wget
-	git
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -133,15 +156,21 @@ users.users.sabeeh = {
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-    networking.firewall = { 
+  networking.firewall = {
     enable = true;
-    allowedTCPPortRanges = [ 
-      { from = 1714; to = 1764; } # KDE Connect
-    ];  
-    allowedUDPPortRanges = [ 
-      { from = 1714; to = 1764; } # KDE Connect
-    ];  
-  };  
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      } # KDE Connect
+    ];
+    allowedUDPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      } # KDE Connect
+    ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -1,8 +1,10 @@
-{ config, pkgs, nixpkgs, ... }:
 {
-  imports = [
-    ./modules/home-manager/zsh.nix
-  ];
+  config,
+  pkgs,
+  nixpkgs,
+  ...
+}:
+{
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "sabeeh";
@@ -24,31 +26,31 @@
     # # "Hello, world!" when run.
     hello
     steam
-      #  thunderbird
-      neovim
-      brave
-      distrobox
-      # steam
-      gcc
-      nodejs_22
-      prismlauncher
-      nerdfonts
-      discord
-      kitty
-      # vscode
-      fzf
-      xclip
-      # lutris-unwrapped
-      virtualbox
-      gh
-      lazygit
+    #  thunderbird
+    # neovim
+    brave
+    distrobox
+    # steam
+    gcc
+    nodejs_22
+    prismlauncher
+    nerdfonts
+    discord
+    kitty
+    # vscode
+    fzf
+    xclip
+    # lutris-unwrapped
+    virtualbox
+    gh
+    lazygit
 
-      #gnome extensions
-      gnomeExtensions.gsconnect
+    #gnome extensions
+    gnomeExtensions.gsconnect
 
-      #Rust stuff
-      rustc
-      cargo
+    #Rust stuff
+    rustc
+    cargo
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -63,7 +65,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-  
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
