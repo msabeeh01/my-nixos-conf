@@ -3,8 +3,7 @@
     config.allowUnfree = true;
   },
 }:
-
-(pkgs.buildFHSEnv {
+let fhs = pkgs.buildFHSEnv {
   name = "simple-x11-env";
   targetPkgs =
     pkgs:
@@ -25,4 +24,11 @@
       alsa-lib
     ]);
   runScript = "bash";
-}).env
+
+  };
+in pkgs.mkShell {
+  nativeBuildInputs = [
+    fhs
+  ];
+}
+
