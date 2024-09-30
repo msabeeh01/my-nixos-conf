@@ -10,41 +10,19 @@
       ./hardware-configuration.nix
     ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  programs.zsh.enable = true;
+  programs.zsh.autosuggestions.enable = true;
 users.users.sabeeh = {
   isNormalUser = true;
   description = "Sabeeh";
   extraGroups = [ "docker" "networkmanager" "wheel" ];
   shell = pkgs.zsh;
-  packages = with pkgs; [
-  #  thunderbird
-      neovim
-      brave
-      distrobox
-      # steam
-      gcc
-      nodejs_22
-      prismlauncher
-      nerdfonts
-      discord
-      kitty
-      # vscode
-      fzf
-      xclip
-      # lutris-unwrapped
-      virtualbox
-      gh
-      lazygit
-
-      #gnome extensions
-      gnomeExtensions.gsconnect
-
-      #Rust stuff
-      pkgs.rustc
-      pkgs.cargo
-  ];
+  # packages = with pkgs; [
+  #
+  # ];
 };
   
-
+ 
   networking.hostName = "nixos"; # Define your hostname.
   networking = {
       extraHosts = "
@@ -53,17 +31,6 @@ users.users.sabeeh = {
         10.0.0.26  haos
         10.0.0.183 xhost
       ";
-    };
-
-  programs.zsh={
-      enable=true;
-        enableCompletion = true;
-  autosuggestions.enable = true;
-  syntaxHighlighting.enable = true;
-      ohMyZsh={
-          enable= true;
-          theme = "robbyrussell";
-        };
     };
 
   fonts = {

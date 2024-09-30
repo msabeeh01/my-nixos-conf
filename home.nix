@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, nixpkgs, ... }:
 {
+  imports = [
+    ./modules/home-manager/zsh.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "sabeeh";
@@ -17,10 +19,36 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    pkgs.hello
+    hello
+    steam
+      #  thunderbird
+      neovim
+      brave
+      distrobox
+      # steam
+      gcc
+      nodejs_22
+      prismlauncher
+      nerdfonts
+      discord
+      kitty
+      # vscode
+      fzf
+      xclip
+      # lutris-unwrapped
+      virtualbox
+      gh
+      lazygit
+
+      #gnome extensions
+      gnomeExtensions.gsconnect
+
+      #Rust stuff
+      rustc
+      cargo
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -35,6 +63,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+  
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -73,4 +102,5 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
 }
