@@ -25,8 +25,9 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     hello
-    steam
+    # steam
     neovim
+    wineWowPackages.unstableFull
     brave
     distrobox
     gcc

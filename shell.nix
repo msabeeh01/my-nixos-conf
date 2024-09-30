@@ -11,8 +11,6 @@
     (with pkgs; [
       udev
       alsa-lib
-      opera
-      nautilus
     ])
     ++ (with pkgs.xorg; [
       libX11
