@@ -26,21 +26,19 @@
     # # "Hello, world!" when run.
     hello
     steam
-    #  thunderbird
-    # neovim
+    neovim
     brave
     distrobox
-    # steam
     gcc
     nodejs_22
     prismlauncher
     nerdfonts
     discord
     kitty
-    # vscode
+    vscode
     fzf
     xclip
-    # lutris-unwrapped
+    lutris-unwrapped
     virtualbox
     gh
     lazygit
