@@ -39,7 +39,10 @@
     vscode
     fzf
     xclip
-    lutris-unwrapped
+    krita
+    # this is unwrapped, meaning it will require a FHS env
+    # lutris-unwrapped
+    lutris
     virtualbox
     gh
     lazygit

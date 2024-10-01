@@ -3,7 +3,7 @@
     config.allowUnfree = true;
   },
 }:
-let fhs = pkgs.buildFHSEnv {
+(pkgs.buildFHSEnv {
   name = "simple-x11-env";
   targetPkgs =
     pkgs:
@@ -25,13 +25,6 @@ let fhs = pkgs.buildFHSEnv {
     ]);
   runScript = "bash";
 
-  };
-in pkgs.mkShell {
-    buildInputs =[
-      fhs
-    ];
-  nativeBuildInputs = [
-    fhs
-  ];
-}
+  }).env
+
 
