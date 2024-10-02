@@ -37,6 +37,7 @@
     kitty
     vscode
     krita
+    android-studio-full
     # (pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
     #   dfVersion = "0.44.11";
     #   theme = "spacefox";
@@ -44,7 +45,6 @@
     #   enableFPS = true;
     # })
     bruno
-    android-studio
     #neovim and dependencies
     neovim
     fzf
@@ -80,6 +80,18 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  nixpkgs.config = {
+    allowUnfree = true;
+    android_sdk.accept_license = true;
+   # packageOverrides = pkgs: {
+    #   android-studio-full = pkgs.android-studio-full.override {
+    #     acceptLicense = true;
+    #   };
+    #
+    # };
+  };
+
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
