@@ -26,7 +26,6 @@
     # # "Hello, world!" when run.
     hello
     # steam
-    neovim
     wineWowPackages.unstableFull
     brave
     distrobox
@@ -37,9 +36,16 @@
     discord
     kitty
     vscode
+    krita
+
+    #neovim and dependencies
+    neovim
     fzf
     xclip
-    krita
+
+    #auto build dependencies 
+    nix-init
+
     # this is unwrapped, meaning it will require a FHS env
     # lutris-unwrapped
     lutris
