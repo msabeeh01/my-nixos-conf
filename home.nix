@@ -37,7 +37,12 @@
     kitty
     vscode
     krita
-    dwarf-fortress-packages.dwarf-fortress-full
+    (pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
+      dfVersion = "0.44.11";
+      theme = "spacefox";
+      enableIntro = false;
+      enableFPS = true;
+    })
     #neovim and dependencies
     neovim
     fzf
