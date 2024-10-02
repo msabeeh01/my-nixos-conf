@@ -37,7 +37,7 @@
     kitty
     vscode
     krita
-
+    dwarf-fortress-packages.dwarf-fortress-full
     #neovim and dependencies
     neovim
     fzf
