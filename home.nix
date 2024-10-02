@@ -37,12 +37,14 @@
     kitty
     vscode
     krita
-    (pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
-      dfVersion = "0.44.11";
-      theme = "spacefox";
-      enableIntro = false;
-      enableFPS = true;
-    })
+    # (pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
+    #   dfVersion = "0.44.11";
+    #   theme = "spacefox";
+    #   enableIntro = false;
+    #   enableFPS = true;
+    # })
+    bruno
+    android-studio
     #neovim and dependencies
     neovim
     fzf
