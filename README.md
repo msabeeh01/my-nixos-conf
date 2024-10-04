@@ -14,4 +14,4 @@ This is my basic nixos conf (for now) that is a good starting place for modulari
 
 ### Why is my FHS nix-shell declared as such?
 
-A workaround so that i could get PS1 to show i was using nix-shell while maintaining a FHS env and not a normal shell. Not tested besides for stuff i use.
+This is just a template for apps that need a FHS Environment, an example would be Expo Go application, needs FHSEnv to run on local android simulator.
