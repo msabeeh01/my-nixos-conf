@@ -5,12 +5,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
+nix-ld.url = "github:Mic92/nix-ld"; 
+ nix-ld.inputs.nixpkgs.follows = "nixpkgs";
+};
   outputs =
     inputs@{
       self,
       nixpkgs,
       home-manager,
+      nix-ld,
       ...
     }:
     let
@@ -39,6 +42,7 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+	  nix-ld.nixosModules.nix-ld
 
           #home-manager
           home-manager.nixosModules.home-manager

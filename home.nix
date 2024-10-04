@@ -39,11 +39,10 @@
     krita
     android-studio
     bruno
-    #neovim and dependencies
-    neovim
+
+    #neovim dependencies
     fzf
     xclip
-
     #auto build dependencies 
     nix-init
 

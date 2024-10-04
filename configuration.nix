@@ -27,8 +27,9 @@
       "wheel"
     ];
     shell = pkgs.zsh;
-    # packages = with pkgs; [
-    # ];
+    packages = with pkgs; [
+    	neovim
+    ];
   };
 
   programs.steam.enable = true;
