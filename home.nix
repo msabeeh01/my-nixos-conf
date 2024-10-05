@@ -39,6 +39,7 @@
     krita
     android-studio
     bruno
+    inkscape-with-extensions
 
     #neovim dependencies
     fzf
