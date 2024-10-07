@@ -24,8 +24,6 @@
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    hello
-    # steam
     wineWowPackages.unstableFull
     brave
     distrobox
@@ -40,6 +38,7 @@
     android-studio
     bruno
     inkscape-with-extensions
+    virt-viewer
 
     #neovim dependencies
     fzf
