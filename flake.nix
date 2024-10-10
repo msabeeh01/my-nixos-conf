@@ -16,6 +16,7 @@ nix-ld.url = "github:Mic92/nix-ld";
       nix-ld,
       ...
     }:
+    #this let/in statement is only if you want to do something like /modules/steam.nix or /modules/firefox.nvim and is not required
     let
       lib = nixpkgs.lib;
       importAll =
