@@ -32,6 +32,7 @@
     ];
   };
 
+  #Packages i couldnt get working in home-manager
   programs.steam.enable = true;
   programs.zsh = {
     enable = true;
@@ -49,6 +50,7 @@
   };
 
   networking.hostName = "nixos"; # Define your hostname.
+  #list of extra hosts for ssh
   networking = {
     extraHosts = "
         10.0.0.147 pvehost

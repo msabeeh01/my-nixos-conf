@@ -42,6 +42,7 @@
     #neovim dependencies
     fzf
     xclip
+
     #auto build dependencies 
     nix-init
 
