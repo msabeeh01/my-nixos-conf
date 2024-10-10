@@ -6,9 +6,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     #TODO:no idea what this does, checkout the github page and remove if requried
-nix-ld.url = "github:Mic92/nix-ld"; 
- nix-ld.inputs.nixpkgs.follows = "nixpkgs";
-};
+    nix-ld.url = "github:Mic92/nix-ld";
+    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
+  };
   outputs =
     inputs@{
       self,
@@ -43,7 +43,7 @@ nix-ld.url = "github:Mic92/nix-ld";
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-	  nix-ld.nixosModules.nix-ld
+          nix-ld.nixosModules.nix-ld
 
           #home-manager
           home-manager.nixosModules.home-manager

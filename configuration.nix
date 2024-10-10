@@ -28,7 +28,7 @@
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-    	neovim
+      neovim
     ];
   };
 
