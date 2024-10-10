@@ -5,6 +5,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    #TODO:no idea what this does, checkout the github page and remove if requried
 nix-ld.url = "github:Mic92/nix-ld"; 
  nix-ld.inputs.nixpkgs.follows = "nixpkgs";
 };
