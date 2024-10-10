@@ -37,7 +37,6 @@ nix-ld.url = "github:Mic92/nix-ld";
         ) paths;
     in
     {
-      # replace 'joes-desktop' with your hostname here.
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
