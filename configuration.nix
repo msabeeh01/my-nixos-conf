@@ -162,7 +162,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   networking.firewall = {
-    enable = true;
+    enable = false;
     allowedTCPPortRanges = [
       {
         from = 1714;
