@@ -35,6 +35,7 @@
     android-studio
     bruno
     inkscape-with-extensions
+    audacity
 
     #Viewer for proxmox
     virt-viewer
