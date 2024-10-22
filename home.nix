@@ -36,6 +36,7 @@
     bruno
     inkscape-with-extensions
     audacity
+    reaper
 
     #Viewer for proxmox
     virt-viewer
